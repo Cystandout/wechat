@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+<text>输入订单号</text>
+ <input type="text" bindinput="input" placeholder="请输入运单号"/>
+ <button bindtap="sclick">查询</button>
+ <scroll-view scroll-y style="width:80%;height:260px">
+ <view wx:for="{{expressInfo.data}}">
+ <text class="msg">
+ {{item.context}}
+ </text>
+ <text class="time">
+ {{item.time}}
+ </text>
+ </view>
+ </scroll-view>
+</view>
+<!-- 806820160474 -->
+<!-- 885551792169807006 -->
