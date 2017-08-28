@@ -2,6 +2,7 @@
 <view class="container">
 <text>输入订单号</text>
  <input type="text" bindinput="input" placeholder="请输入运单号"/>
+  <button bindtap="scancode" bindinput="scan">扫码</button> 
  <button bindtap="sclick">查询</button>
  <scroll-view scroll-y style="width:80%;height:260px">
  <view wx:for="{{expressInfo.data}}">

@@ -24,6 +24,21 @@ Page({
   input:function(e){
     this.setData({ expressNu:e.detail.value})
   },
+  scan:function(e){
+    this.setData({ expressNu: e.result })
+  },
+  scancode:function(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success: (res) => {
+        this.setData({expressNu:res.result})
+        var thispage = this;
+        app.getExpressInfo(this.data.expressNu, function (data) {
+          thispage.setData({ expressInfo: data })
+        })
+      }
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     var that = this
